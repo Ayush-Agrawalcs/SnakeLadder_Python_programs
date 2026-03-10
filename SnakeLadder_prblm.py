@@ -2,6 +2,7 @@ import random
 pos=0
 print("Welcome to the Snake and Ladder Game!")
 print("Single player at start position",pos)
+count=0
 
 def roll_dice():
     dice=random.randint(1,6)
@@ -18,14 +19,17 @@ def choose_option(dice):
             pos-=dice
         if(pos<0):
             pos=0
+    print(pos)
     return pos
 
 while(pos<100):
     dice=roll_dice()
     pos=choose_option(dice)
-print(pos)
+    count+=1
 if(pos>=100):
     print("Player1 win")
+
+print("Total no. of dice role: ",count)
    
         
 
