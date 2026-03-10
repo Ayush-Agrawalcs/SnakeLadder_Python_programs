@@ -5,8 +5,7 @@ print("Welcome to the Snake and Ladder Game!")
 print("First player at start position",pos)
 print("Second player at start position",pos1)
 count=0
-even=0
-
+even=random.randint(0,1)
 def roll_dice():
     dice=random.randint(1,6)
     return dice
@@ -23,6 +22,8 @@ def choose_option(dice):
         else:
             if(pos1+dice<=100):
                 pos1+=dice
+        k=roll_dice()
+        choose_option(k)
 
     elif(option==3):
              if(even%2==0):
@@ -54,6 +55,3 @@ else:
      print("Player2 win")
 
 print("Total no. of dice role: ",count)
-   
-        
-
